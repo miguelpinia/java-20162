@@ -11,6 +11,8 @@ import java.util.Scanner;
  *
  * @author miguel
  */
+
+
 public class TestWhile {
 
     public static void main(String args[]) {
