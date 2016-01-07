@@ -12,6 +12,10 @@ public class Menu {
 
     ArrayList<Contacto> listaDeContactos;
 
+    public Menu() {
+        listaDeContactos = new ArrayList<>();
+    }
+
     public Contacto busqueda(String nombre) {
         for (int i = 0; i < listaDeContactos.size(); i++) {
             Contacto c = listaDeContactos.get(i);
@@ -22,8 +26,8 @@ public class Menu {
         return null;
     }
 
-    public void agregarContacto(Contacto contacto) {
-        listaDeContactos.add(contacto);
+    public boolean agregarContacto(Contacto contacto) {
+        return listaDeContactos.add(contacto);
     }
 
     public boolean eliminaContacto(String nombre) {
@@ -51,6 +55,39 @@ public class Menu {
                       + "4) Dirección\n";
         System.out.println(menu);
         int opcion = sc.nextInt();
+        switch (opcion) {
+            case 1:
+                System.out.println("Dame el nombre: ");
+                String nom = sc.next();
+                listaDeContactos.remove(c);
+                c.nombre = nom;
+                listaDeContactos.add(c);
+                return true;
+            case 2:
+                System.out.println("Dame el telefono: ");
+                String tel = sc.next();
+                listaDeContactos.remove(c);
+                c.telefono = tel;
+                listaDeContactos.add(c);
+                return true;
+            case 3:
+                System.out.println("Dame el correo: ");
+                String email = sc.next();
+                listaDeContactos.remove(c);
+                c.email = email;
+                listaDeContactos.add(c);
+                return true;
+            case 4:
+                System.out.println("Dame la dirección: ");
+                String dir = sc.next();
+                listaDeContactos.remove(c);
+                c.direccion = dir;
+                listaDeContactos.add(c);
+                return true;
+            default:
+                System.out.println("Opción incorrecta!");
+        }
+        return false;
     }
 
 }
