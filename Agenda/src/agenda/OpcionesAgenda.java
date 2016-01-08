@@ -8,18 +8,18 @@ import java.util.Scanner;
  * tener la agenda telefónica.
  * @author miguel
  */
-public class Menu {
+public class OpcionesAgenda {
 
-    ArrayList<Contacto> listaDeContactos;
+    private ArrayList<Contacto> listaDeContactos;
 
-    public Menu() {
+    public OpcionesAgenda() {
         listaDeContactos = new ArrayList<>();
     }
 
     public Contacto busqueda(String nombre) {
         for (int i = 0; i < listaDeContactos.size(); i++) {
             Contacto c = listaDeContactos.get(i);
-            if (c.nombre.equals(nombre)) {
+            if (c.getNombre().equals(nombre)) {
                 return c;
             }
         }
@@ -33,7 +33,7 @@ public class Menu {
     public boolean eliminaContacto(String nombre) {
         for (int i = 0; i < listaDeContactos.size(); i++) {
             Contacto c = listaDeContactos.get(i);
-            if (c.nombre.equals(nombre)) {
+            if (c.getNombre().equals(nombre)) {
                 listaDeContactos.remove(c);
                 return true;
             }
@@ -60,28 +60,28 @@ public class Menu {
                 System.out.println("Dame el nombre: ");
                 String nom = sc.next();
                 listaDeContactos.remove(c);
-                c.nombre = nom;
+                c.setNombre(nom);
                 listaDeContactos.add(c);
                 return true;
             case 2:
                 System.out.println("Dame el telefono: ");
                 String tel = sc.next();
                 listaDeContactos.remove(c);
-                c.telefono = tel;
+                c.setTelefono(tel);
                 listaDeContactos.add(c);
                 return true;
             case 3:
                 System.out.println("Dame el correo: ");
                 String email = sc.next();
                 listaDeContactos.remove(c);
-                c.email = email;
+                c.setEmail(email);
                 listaDeContactos.add(c);
                 return true;
             case 4:
                 System.out.println("Dame la dirección: ");
                 String dir = sc.next();
                 listaDeContactos.remove(c);
-                c.direccion = dir;
+                c.setDireccion(dir);
                 listaDeContactos.add(c);
                 return true;
             default:

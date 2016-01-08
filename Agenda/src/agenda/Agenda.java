@@ -18,7 +18,7 @@ public class Agenda {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Menu menu = new Menu();
+        OpcionesAgenda menu = new OpcionesAgenda();
         Scanner sc = new Scanner(System.in);
         int opcion = -1;
         while (opcion != 0) {
@@ -72,10 +72,10 @@ public class Agenda {
                     System.out.println("Dame el nombre: ");
                     String nomBusqueda = sc.next();
                     Contacto c = menu.busqueda(nomBusqueda);
-                    System.out.println("Nombre: " + c.nombre);
-                    System.out.println("Telefono: " + c.telefono);
-                    System.out.println("Correo: " + c.email);
-                    System.out.println("Dirección: " + c.direccion);
+                    System.out.println("Nombre: " + c.getNombre());
+                    System.out.println("Telefono: " + c.getTelefono());
+                    System.out.println("Correo: " + c.getEmail());
+                    System.out.println("Dirección: " + c.getDireccion());
                     break;
                 case 0:
                     System.exit(0);
