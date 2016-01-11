@@ -1,0 +1,3 @@
+Juan;12345;foo@mail.com;algo
+Miguel;67890;bar@mail.com;algo2
+Pedro;34567;baz@mail.com;algo3

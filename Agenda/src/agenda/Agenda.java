@@ -78,6 +78,7 @@ public class Agenda {
                     System.out.println("Dirección: " + c.getDireccion());
                     break;
                 case 0:
+                    menu.escribeArchivo();
                     System.exit(0);
                 default:
                     System.out.println("Opción no válida.");
