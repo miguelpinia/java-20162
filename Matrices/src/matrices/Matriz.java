@@ -103,6 +103,19 @@ public class Matriz {
         return resMul;
     }
 
+    public Matriz multiplicacionEscalar(double escalar) {
+        double[][] resultado =
+            new double[matriz.length][matriz[0].length];
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[0].length; j++) {
+                resultado[i][j] = escalar * matriz[i][j];
+            }
+        }
+        Matriz res = new Matriz();
+        res.remplazaMatriz(resultado);
+        return res;
+    }
+
     public void imprimeMatriz() {
         String salida = "";
         for (int i = 0; i < matriz.length; i++) {

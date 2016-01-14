@@ -5,6 +5,8 @@
  */
 package ui;
 
+import java.awt.event.KeyEvent;
+
 /**
  *
  * @author miguel
@@ -49,11 +51,17 @@ public class Calculadora extends javax.swing.JFrame {
         botonMultiplicacion = new javax.swing.JButton();
         botonDivision = new javax.swing.JButton();
         botonIgualdad = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Mi Calculadora");
 
         jTextField1.setEditable(false);
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField1KeyPressed(evt);
+            }
+        });
 
         boton1.setText("1");
         boton1.addActionListener(new java.awt.event.ActionListener() {
@@ -70,20 +78,60 @@ public class Calculadora extends javax.swing.JFrame {
         });
 
         boton3.setText("3");
+        boton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton3ActionPerformed(evt);
+            }
+        });
 
         boton4.setText("4");
+        boton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton4ActionPerformed(evt);
+            }
+        });
 
         boton5.setText("5");
+        boton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton5ActionPerformed(evt);
+            }
+        });
 
         boton6.setText("6");
+        boton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton6ActionPerformed(evt);
+            }
+        });
 
         boton7.setText("7");
+        boton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton7ActionPerformed(evt);
+            }
+        });
 
         boton8.setText("8");
+        boton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton8ActionPerformed(evt);
+            }
+        });
 
         boton9.setText("9");
+        boton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton9ActionPerformed(evt);
+            }
+        });
 
         boton0.setText("0");
+        boton0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton0ActionPerformed(evt);
+            }
+        });
 
         botonSuma.setText("+");
         botonSuma.addActionListener(new java.awt.event.ActionListener() {
@@ -93,15 +141,37 @@ public class Calculadora extends javax.swing.JFrame {
         });
 
         botonResta.setText("-");
+        botonResta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonRestaActionPerformed(evt);
+            }
+        });
 
         botonMultiplicacion.setText("*");
+        botonMultiplicacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonMultiplicacionActionPerformed(evt);
+            }
+        });
 
         botonDivision.setText("/");
+        botonDivision.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonDivisionActionPerformed(evt);
+            }
+        });
 
         botonIgualdad.setText("=");
         botonIgualdad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonIgualdadActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText(".");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -126,9 +196,11 @@ public class Calculadora extends javax.swing.JFrame {
                             .addComponent(boton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(boton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(boton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(boton9, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(boton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(boton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(boton9, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(botonSuma, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -162,9 +234,7 @@ public class Calculadora extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(boton7, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(boton8, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(boton9, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(boton0, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(boton9, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(botonIgualdad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createSequentialGroup()
@@ -175,34 +245,28 @@ public class Calculadora extends javax.swing.JFrame {
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(botonResta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(botonDivision, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(boton0, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void boton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton1ActionPerformed
-        // TODO add your handling code here:
+    private void actualizaNumero(String numero) {
         if (valor != null) {
-            valor += "1";
+            valor += numero;
         } else {
-            valor = "1";
+            valor = numero;
         }
         jTextField1.setText(valor);
-    }//GEN-LAST:event_boton1ActionPerformed
+    }
 
-    private void boton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton2ActionPerformed
-        // TODO add your handling code here:
-        if (valor != null) {
-            valor += "2";
-        } else {
-            valor = "2";
-        }
-        jTextField1.setText(valor);
-    }//GEN-LAST:event_boton2ActionPerformed
-
-    private void botonSumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSumaActionPerformed
-        // TODO add your handling code here:
+    private void actualizaOperacion(String op) {
         if (valor != null) {
             a = Double.parseDouble(valor);
             valor = null;
@@ -210,22 +274,184 @@ public class Calculadora extends javax.swing.JFrame {
             a = 0.0;
         }
         jTextField1.setText(a.toString());
-        operacion = "+";
+        operacion = op;
+    }
+
+    private void igualdad() {
+        if (valor != null) {
+            b = Double.parseDouble(valor);
+            valor = null;
+        } else { b = 0.0; }
+        if (operacion.equals("+")) {resultado = a + b;}
+        else if (operacion.equals("-")) {resultado = a - b;}
+        else if (operacion.equals("*")) {
+            resultado = a * b;
+        } else if (operacion.equals("/")) {
+            if (b == 0) {
+                jTextField1.setText("No se "
+                + "puede dividir entre cero");
+                return;
+            }
+            resultado = a / b;
+        }
+        jTextField1.setText(resultado.toString());
+    }
+
+    private void boton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton1ActionPerformed
+        // TODO add your handling code here:
+        actualizaNumero("1");
+    }//GEN-LAST:event_boton1ActionPerformed
+
+    private void boton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton2ActionPerformed
+        // TODO add your handling code here:
+        actualizaNumero("2");
+    }//GEN-LAST:event_boton2ActionPerformed
+
+    private void botonSumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSumaActionPerformed
+        // TODO add your handling code here:
+        actualizaOperacion("+");
     }//GEN-LAST:event_botonSumaActionPerformed
 
     private void botonIgualdadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIgualdadActionPerformed
         // TODO add your handling code here:
-        if (valor != null) {
-            b = Double.parseDouble(valor);
-            valor = null;
-        } else {
-            b = 0.0;
-        }
-        if (operacion.equals("+")) {
-            resultado = a + b;
-        }
-        jTextField1.setText(resultado.toString());
+        igualdad();
+
+//        switch (operacion) {
+//            case "+":
+//                resultado = a + b;
+//                break;
+//            case "-":
+//                resultado = a - b;
+//                break;
+//            case "*":
+//                resultado = a * b;
+//                break;
+//            case "/":
+//                if (b == 0) {
+//                    jTextField1.setText("No se "
+//                            + "puede dividir entre 0");
+//                    return;
+//                }
+//                resultado = a / b;
+//                break;
+//        }
+
     }//GEN-LAST:event_botonIgualdadActionPerformed
+
+    private void boton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton3ActionPerformed
+        // TODO add your handling code here:
+        actualizaNumero("3");
+    }//GEN-LAST:event_boton3ActionPerformed
+
+    private void boton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton4ActionPerformed
+        // TODO add your handling code here:
+        actualizaNumero("4");
+    }//GEN-LAST:event_boton4ActionPerformed
+
+    private void boton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton5ActionPerformed
+        // TODO add your handling code here:
+        actualizaNumero("5");
+    }//GEN-LAST:event_boton5ActionPerformed
+
+    private void boton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton6ActionPerformed
+        // TODO add your handling code here:
+        actualizaNumero("6");
+    }//GEN-LAST:event_boton6ActionPerformed
+
+    private void boton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton7ActionPerformed
+        // TODO add your handling code here:
+        actualizaNumero("7");
+    }//GEN-LAST:event_boton7ActionPerformed
+
+    private void boton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton8ActionPerformed
+        // TODO add your handling code here:
+        actualizaNumero("8");
+    }//GEN-LAST:event_boton8ActionPerformed
+
+    private void boton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton9ActionPerformed
+        // TODO add your handling code here:
+        actualizaNumero("9");
+    }//GEN-LAST:event_boton9ActionPerformed
+
+    private void boton0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton0ActionPerformed
+        // TODO add your handling code here:
+        actualizaNumero("0");
+    }//GEN-LAST:event_boton0ActionPerformed
+
+    private void botonRestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRestaActionPerformed
+        // TODO add your handling code here:
+        actualizaOperacion("-");
+    }//GEN-LAST:event_botonRestaActionPerformed
+
+    private void botonMultiplicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMultiplicacionActionPerformed
+        // TODO add your handling code here:
+        actualizaOperacion("*");
+    }//GEN-LAST:event_botonMultiplicacionActionPerformed
+
+    private void botonDivisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonDivisionActionPerformed
+        // TODO add your handling code here:
+        actualizaOperacion("/");
+    }//GEN-LAST:event_botonDivisionActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        if (valor != null && !valor.contains(".")) {
+            valor += ".";
+            jTextField1.setText(valor);
+        }
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
+        // TODO add your handling code here:
+        switch (evt.getKeyChar()) {
+            case '1':
+                actualizaNumero("1");
+                break;
+            case '2':
+                actualizaNumero("2");
+                break;
+            case '3':
+                actualizaNumero("3");
+                break;
+            case '4':
+                actualizaNumero("4");
+                break;
+            case '5':
+                actualizaNumero("5");
+                break;
+            case '6':
+                actualizaNumero("6");
+                break;
+            case '7':
+                actualizaNumero("7");
+                break;
+            case '8':
+                actualizaNumero("8");
+                break;
+            case '9':
+                actualizaNumero("9");
+                break;
+            case '0':
+                actualizaNumero("0");
+                break;
+            case '+':
+                actualizaOperacion("+");
+                break;
+            case '-':
+                actualizaOperacion("-");
+                break;
+            case '*':
+                actualizaOperacion("*");
+                break;
+            case '/':
+                actualizaOperacion("/");
+                break;
+            case KeyEvent.VK_ENTER:
+                igualdad();
+                break;
+        }
+    }//GEN-LAST:event_jTextField1KeyPressed
 
     /**
      * @param args the command line arguments
@@ -284,6 +510,7 @@ public class Calculadora extends javax.swing.JFrame {
     private javax.swing.JButton botonMultiplicacion;
     private javax.swing.JButton botonResta;
     private javax.swing.JButton botonSuma;
+    private javax.swing.JButton jButton1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

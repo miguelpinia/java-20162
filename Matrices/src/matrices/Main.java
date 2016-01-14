@@ -44,6 +44,13 @@ public class Main {
         matriz1.remplazaMatriz(m1);
         matriz2.remplazaMatriz(m2);
         matriz1.multiplicacion(matriz2).imprimeMatriz();
+        System.out.println("=== Multiplicación por "
+        + "escalar ======");
+
+        matriz2.multiplicacionEscalar(10).imprimeMatriz();
+
+//        Matriz res = matriz2.multiplicacionEscalar(10);
+//        res.imprimeMatriz();
     }
 
 }
