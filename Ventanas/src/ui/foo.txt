@@ -1,0 +1,48 @@
+SOURCEBINPATH=~/proyectos/labsom/dist
+SOURCEBIN=LabSOM.jar
+SOURCEBINLIB=~/proyectos/labsom/dist/lib
+DEBFOLDER=~/labsom-versiones/labsom
+DEBVERSION=3.1.8
+DEBFOLDERNAME=$DEBFOLDER-$DEBVERSION
+
+rm -rf $DEBFOLDERNAME
+
+mkdir -p $DEBFOLDERNAME
+mkdir -p $DEBFOLDERNAME/DEBIAN
+mkdir -p $DEBFOLDERNAME/usr/lib/LabSOM
+mkdir -p $DEBFOLDERNAME/usr/bin
+mkdir -p $DEBFOLDERNAME/usr/share/LabSOM
+mkdir -p $DEBFOLDERNAME/usr/share/applications
+
+echo 'Package: LabSOM
+Version:' ${DEBVERSION} '
+Section: desktop
+Priority: optional
+Architecture: all
+Maintainer: Miguel Piña <miguel_pinia@ciencias.unam.mx>
+Installed-Size: 9
+Description: LabSOM ' ${DEBVERSION}'
+ Laboratorio de Dinamica No Lineal
+ Facultad de Ciencias, UNAM' > $DEBFOLDERNAME/DEBIAN/control
+cp -r ../dist/* $DEBFOLDERNAME/usr/lib/LabSOM
+
+echo "#!/bin/bash
+java -jar /usr/lib/LabSOM/LabSOM.jar" > $DEBFOLDERNAME/usr/bin/LabSOM
+
+chmod +x $DEBFOLDERNAME/usr/bin/LabSOM
+
+cp ../src/edu/mx/unam/fciencias/labsom/ui/resources/Icon11.png $DEBFOLDERNAME/usr/share/LabSOM/
+
+echo '[Desktop Entry]
+Encoding=UTF-8
+Name=LabSOM '${DEBVERSION}'
+Comment=Laboratorio interactivo para el SOM
+Exec=/usr/bin/LabSOM
+Icon=/usr/share/LabSOM/Icon11.png
+Terminal=false
+Type=Application
+Categories=GNOME;Application;Other
+StartupNotify=true' > $DEBFOLDERNAME/usr/share/applications/LabSOM.desktop
+
+cd ~
+dpkg --build $DEBFOLDERNAME
